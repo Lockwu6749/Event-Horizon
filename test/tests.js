@@ -17,7 +17,7 @@ describe("Horizon Tests", function () {
         450000000
     ]
 
-    // Recreating abi.encodePacked from solidity for (address, amount) pairs
+    // Recreate abi.encodePacked from solidity for (address, amount) pairs
     hexAmounts = amounts.map(value => value.toString(16).toUpperCase().padStart(64, 0));
     let hashInput = addresses.map((addr,i) => addr.concat(hexAmounts[i]));
     

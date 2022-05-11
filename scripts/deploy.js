@@ -22,10 +22,8 @@ const main = async () => {
     1000000
   ]
 
-  // Convert amounts to Hex with 64 padding
+  // Recreate abi.encodePacked from solidity for (address, amount) pairs
   let hexAmounts = amounts.map(value => value.toString(16).toUpperCase().padStart(64, 0));
-
-  // Concat Addresses and amounts
   let hashInput = addresses.map((addr,i) => addr.concat(hexAmounts[i]));
   
   // Create Merkle Tree
