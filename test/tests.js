@@ -18,7 +18,7 @@ describe("Horizon Tests", function () {
     ]
 
     // Recreate abi.encodePacked from solidity for (address, amount) pairs
-    hexAmounts = amounts.map(value => value.toString(16).toUpperCase().padStart(64, 0));
+    let hexAmounts = amounts.map(value => value.toString(16).toUpperCase().padStart(64, 0));
     let hashInput = addresses.map((addr,i) => addr.concat(hexAmounts[i]));
     
     // Create Merkle Tree and get rootHash
