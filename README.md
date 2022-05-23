@@ -1,1 +1,1 @@
-# Event-Horizon
+Event Horizon

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
@@ -29,7 +29,7 @@ contract Horizon is ERC20, Ownable, ReentrancyGuard {
         require(MerkleProof.verify(_merkleProof, _merkleRoot, leaf), "Invalid proof");
 
         addressClaimed[_msgSender()] = true;
-        uint256 _amount = amount / 1000 * 10 ** decimals();
+        uint256 _amount = amount * 10 ** decimals() / 1000;
         _mint(_msgSender(), _amount);
         
         emit TokenClaim(_msgSender(), _amount);

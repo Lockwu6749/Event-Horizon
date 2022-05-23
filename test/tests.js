@@ -91,7 +91,6 @@ describe("Horizon Tests", function () {
   it("should change claimActive", async function () {
     await tokenContract.setClaimActive();
     let claimActive = await tokenContract.claimActive();
-    console.log(claimActive);
     expect(claimActive).to.equal(true);
   });
 
